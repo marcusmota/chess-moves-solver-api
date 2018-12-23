@@ -1,34 +1,40 @@
 const movesUp = (times, letter, num, hash) => {
 
-    if(num + times > hash.rows){
+    let tmpNum = parseInt(num, 10);
+
+    if(tmpNum + times > hash.rows){
         return null;
     }
 
     for(let k=0; k < times; k++){
-        num++;
+        tmpNum++;
     };
 
-    return letter+num;
+    return letter+tmpNum;
 
 };
 
 const movesDown = (times, letter, num, hash) => {
 
-    if(num - times < 1){
+    let tmpNum = parseInt(num, 10);
+
+    if(tmpNum - times < 1){
         return null;
     }
     
     for(let k=0; k < times; k++){
-        num--;
+        tmpNum--;
     };
 
-    return letter+num;
+    return letter+tmpNum;
 
 };
 
 const movesLeft = (times, letter, num, hash) => {
+
+    let tmpNum = parseInt(num, 10);
+
     let i = hash.columns.indexOf(letter);
-    let count = hash.columns.length;
 
     if(i - times < 0){
         return null;
@@ -38,10 +44,12 @@ const movesLeft = (times, letter, num, hash) => {
         i--;
     };
 
-    return hash.columns[i]+num;
+    return hash.columns[i]+tmpNum;
 };
 
 const movesRight = (times, letter, num, hash) => {
+
+    let tmpNum = parseInt(num, 10);
 
     let i = hash.columns.indexOf(letter);
     let count = hash.columns.length;
@@ -54,7 +62,7 @@ const movesRight = (times, letter, num, hash) => {
         i++;
     };
 
-    return hash.columns[i]+num;
+    return hash.columns[i]+tmpNum;
 };
 
 module.exports = {
