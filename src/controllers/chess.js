@@ -21,8 +21,6 @@ const getSecondPositionCharacter = (pos) => {
 };
 
 
-
-
 module.exports = {
     getFirstPositionCharacter,
     getSecondPositionCharacter
