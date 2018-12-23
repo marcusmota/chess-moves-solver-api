@@ -65,9 +65,27 @@ const movesRight = (times, letter, num, hash) => {
     return hash.columns[i]+tmpNum;
 };
 
+const getFirstPositionCharacter = (pos) => {
+    if(pos && pos.length > 0){
+        return pos[0];
+    }
+
+    return null;
+};
+
+const getSecondPositionCharacter = (pos) => {
+    if(pos && pos.length > 1){
+        return pos[1];
+    }
+
+    return null;
+};
+
 module.exports = {
     movesUp,
     movesDown,
     movesLeft,
-    movesRight
+    movesRight,
+    getFirstPositionCharacter,
+    getSecondPositionCharacter
 }

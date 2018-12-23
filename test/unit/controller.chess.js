@@ -18,28 +18,5 @@ describe('Chess Controller Unit Test', () => {
         rows : 8
     };
 
-    describe('test helpers methods', () => {
-
-        it('should the first character (A) of a position string `A1` ', done => {
-
-            const result = chessController.getFirstPositionCharacter('A1')
-
-            expect(result).to.be.equal('A');
-            done();
-
-        });
-
-        it('should the second character (1) of a position string `A1` ', done => {
-
-            const result = chessController.getSecondPositionCharacter('A1')
-
-            expect(result).to.be.equal('1');
-            done();
-
-        });
-
-    });
-
-
 
 });

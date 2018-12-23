@@ -1,15 +1,14 @@
 const helpers = require("../../src/util/helpers");
-const chessController = require("../../src/controllers/chess");
 
 const UUR = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesUp(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesRight(1, col, row, chessHash);
 
@@ -19,13 +18,13 @@ const UUR = (pos, chessHash) => {
 
 const UUL = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesUp(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesLeft(1, col, row, chessHash);
 
@@ -34,13 +33,13 @@ const UUL = (pos, chessHash) => {
 
 const DDR = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesDown(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesRight(1, col, row, chessHash);
 
@@ -49,13 +48,13 @@ const DDR = (pos, chessHash) => {
 
 const DDL = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesDown(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesLeft(1, col, row, chessHash);
 
@@ -64,13 +63,13 @@ const DDL = (pos, chessHash) => {
 
 const RRU = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesRight(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesUp(1, col, row, chessHash);
 
@@ -79,13 +78,13 @@ const RRU = (pos, chessHash) => {
 
 const RRD = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesRight(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesDown(1, col, row, chessHash);
 
@@ -94,13 +93,13 @@ const RRD = (pos, chessHash) => {
 
 const LLU = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesLeft(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesUp(1, col, row, chessHash);
 
@@ -109,13 +108,13 @@ const LLU = (pos, chessHash) => {
 
 const LLD = (pos, chessHash) => {
 
-    let col = chessController.getFirstPositionCharacter(pos);
-    let row = chessController.getSecondPositionCharacter(pos);
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
 
     let result = helpers.movesLeft(2, col, row, chessHash);
 
-    col = chessController.getFirstPositionCharacter(result);
-    row = chessController.getSecondPositionCharacter(result);
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
 
     const res = helpers.movesDown(1, col, row, chessHash);
 
