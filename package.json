@@ -1,0 +1,18 @@
+{
+  "name": "chess-moves-solver",
+  "version": "1.0.0",
+  "description": "It's API for chess moves solver",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Mota <marcushcsm@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
