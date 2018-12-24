@@ -298,21 +298,43 @@ const LLDFull = (pos, chessHash) => {
     return moves;
 };
 
-const getKnightFullMoves = (pos, chessHash) => {
+const getKnightMoves = (moves, pos, chessHash) => {
+
+    const availableMoves = {};
+
+    if(moves.uur){
+        availableMoves['uur'] = UURFull(pos, chessHash);
+    }
+
+    if(moves.uul){
+        availableMoves['uul'] = UULFull(pos, chessHash);
+    }
+
+    if(moves.ddr){
+        availableMoves['ddr'] = DDRFull(pos, chessHash);
+    }
+
+    if(moves.ddl){
+        availableMoves['ddl'] = DDLFull(pos, chessHash);
+    }
+
+    if(moves.llu){
+        availableMoves['llu'] = LLUFull(pos, chessHash);
+    }
+
+    if(moves.lld){
+        availableMoves['lld'] = LLDFull(pos, chessHash);
+    }
+
+    if(moves.rru){
+        availableMoves['rru'] = RRUFull(pos, chessHash);
+    }
+
+    if(moves.rrd){
+        availableMoves['rrd'] = RRDFull(pos, chessHash);
+    }
     
-    const moves = {};
-
-    moves['uur'] = (UURFull(pos, chessHash));
-    moves['uul'] = (UULFull(pos, chessHash));
-    moves['ddr'] = (DDRFull(pos, chessHash));
-    moves['ddl'] = (DDLFull(pos, chessHash));
-    moves['rru'] = (RRUFull(pos, chessHash));
-    moves['rrd'] = (RRDFull(pos, chessHash));
-    moves['llu'] = (LLUFull(pos, chessHash));
-    moves['lld'] = (LLDFull(pos, chessHash));
-
-    return moves;
-
+    return availableMoves;
 };
 
 module.exports = {
@@ -324,5 +346,5 @@ module.exports = {
     DDRFull, DDLFull,
     LLUFull, LLDFull,
     RRUFull, RRDFull,
-    getKnightFullMoves
+    getKnightMoves
 }
