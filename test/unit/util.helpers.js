@@ -103,7 +103,7 @@ describe('Util Helpers Unit Test', () => {
 
             const result = helpers.getSecondPositionCharacter('A1')
 
-            expect(result).to.be.equal('1');
+            expect(result).to.be.equal(1);
             done();
 
         });
