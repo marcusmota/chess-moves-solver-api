@@ -15,3 +15,4 @@ app.listen(6060, function () {
     console.log(``);
 });
 
+module.exports = app;
