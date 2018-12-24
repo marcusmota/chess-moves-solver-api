@@ -1,6 +1,6 @@
 const movesUp = (times, letter, num, hash) => {
 
-    let tmpNum = parseInt(num, 10);
+    let tmpNum = num;
 
     if(tmpNum + times > hash.rows){
         return null;
@@ -16,7 +16,7 @@ const movesUp = (times, letter, num, hash) => {
 
 const movesDown = (times, letter, num, hash) => {
 
-    let tmpNum = parseInt(num, 10);
+    let tmpNum = num;
 
     if(tmpNum - times < 1){
         return null;
@@ -32,7 +32,7 @@ const movesDown = (times, letter, num, hash) => {
 
 const movesLeft = (times, letter, num, hash) => {
 
-    let tmpNum = parseInt(num, 10);
+    let tmpNum = num;
 
     let i = hash.columns.indexOf(letter);
 
@@ -49,7 +49,7 @@ const movesLeft = (times, letter, num, hash) => {
 
 const movesRight = (times, letter, num, hash) => {
 
-    let tmpNum = parseInt(num, 10);
+    let tmpNum = num;
 
     let i = hash.columns.indexOf(letter);
     let count = hash.columns.length;
@@ -75,7 +75,7 @@ const getFirstPositionCharacter = (pos) => {
 
 const getSecondPositionCharacter = (pos) => {
     if(pos && pos.length > 1){
-        return pos[1];
+        return parseInt(pos[1]);
     }
 
     return null;
