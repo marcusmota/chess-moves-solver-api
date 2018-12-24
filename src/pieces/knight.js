@@ -10,9 +10,9 @@ const UUR = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesRight(1, col, row, chessHash);
+    result = helpers.movesRight(1, col, row, chessHash);
 
-    return res;
+    return result;
 
 };
 
@@ -26,9 +26,9 @@ const UUL = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesLeft(1, col, row, chessHash);
+    result = helpers.movesLeft(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const DDR = (pos, chessHash) => {
@@ -41,9 +41,9 @@ const DDR = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesRight(1, col, row, chessHash);
+    result = helpers.movesRight(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const DDL = (pos, chessHash) => {
@@ -56,9 +56,9 @@ const DDL = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesLeft(1, col, row, chessHash);
+    result = helpers.movesLeft(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const RRU = (pos, chessHash) => {
@@ -71,9 +71,9 @@ const RRU = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesUp(1, col, row, chessHash);
+    result = helpers.movesUp(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const RRD = (pos, chessHash) => {
@@ -86,9 +86,9 @@ const RRD = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesDown(1, col, row, chessHash);
+    result = helpers.movesDown(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const LLU = (pos, chessHash) => {
@@ -101,9 +101,9 @@ const LLU = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesUp(1, col, row, chessHash);
+    result = helpers.movesUp(1, col, row, chessHash);
 
-    return res;
+    return result;
 };
 
 const LLD = (pos, chessHash) => {
@@ -116,14 +116,213 @@ const LLD = (pos, chessHash) => {
     col = helpers.getFirstPositionCharacter(result);
     row = helpers.getSecondPositionCharacter(result);
 
-    const res = helpers.movesDown(1, col, row, chessHash);
+    result = helpers.movesDown(1, col, row, chessHash);
 
-    return res;
+    return result;
+};
+
+const UURFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesUp(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesUp(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesRight(1, col, row, chessHash);
+
+    moves.push(result);
+
+    return moves;
+
+};
+
+const UULFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesUp(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesUp(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesLeft(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const DDRFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesDown(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesDown(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesRight(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const DDLFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesDown(1, col, row, chessHash);
+    moves.push(result);
+    result = helpers.movesDown(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesLeft(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const RRUFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesRight(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesRight(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesUp(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const RRDFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesRight(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesRight(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesDown(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const LLUFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesLeft(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesLeft(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesUp(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const LLDFull = (pos, chessHash) => {
+
+    const moves = [];
+
+    let col = helpers.getFirstPositionCharacter(pos);
+    let row = helpers.getSecondPositionCharacter(pos);
+
+    let result = helpers.movesLeft(1, col, row, chessHash);
+    moves.push(result);
+
+    result = helpers.movesLeft(2, col, row, chessHash);
+    moves.push(result);
+
+    col = helpers.getFirstPositionCharacter(result);
+    row = helpers.getSecondPositionCharacter(result);
+
+    result = helpers.movesDown(1, col, row, chessHash);
+    moves.push(result);
+
+    return moves;
+};
+
+const getKnightFullMoves = (pos, chessHash) => {
+    
+    const moves = {};
+
+    moves['uur'] = (UURFull(pos, chessHash));
+    moves['uul'] = (UULFull(pos, chessHash));
+    moves['ddr'] = (DDRFull(pos, chessHash));
+    moves['ddl'] = (DDLFull(pos, chessHash));
+    moves['rru'] = (RRUFull(pos, chessHash));
+    moves['rrd'] = (RRDFull(pos, chessHash));
+    moves['llu'] = (LLUFull(pos, chessHash));
+    moves['lld'] = (LLDFull(pos, chessHash));
+
+    return moves;
+
 };
 
 module.exports = {
     UUR, UUL,
     DDR, DDL,
     LLU, LLD,
-    RRU, RRD
+    RRU, RRD,
+    UURFull, UULFull,
+    DDRFull, DDLFull,
+    LLUFull, LLDFull,
+    RRUFull, RRDFull,
+    getKnightFullMoves
 }
