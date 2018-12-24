@@ -8,9 +8,17 @@ const chessHash = {
 
 const getAvailableMovesByPosition = (req,res) => {
 
+    let position = req.query.position ? req.query.position.toUpperCase() : req.query.position;
+
+    let piece = req.params.piece ? req.params.piece.toUpperCase() : req.params.piece;
+    
+    if(!(/^[a-h|A-H]([0-8]{1})$/).test(position)){
+        return res.status(422).send({msg : "Please, given a valid chess position. Ex.: A1, C8, H3..."})
+    }
+
     let availableMoves = [];
 
-    if(req.params.piece === 'knight'){
+    if(piece === 'KNIGHT'){
 
         let moves = {
             uur : true,
@@ -23,8 +31,8 @@ const getAvailableMovesByPosition = (req,res) => {
             lld : true
         };
         
-        let letter = helpers.getFirstPositionCharacter(req.query.position);
-        let num = helpers.getSecondPositionCharacter(req.query.position);
+        let letter = helpers.getFirstPositionCharacter(position);
+        let num = helpers.getSecondPositionCharacter(position);
 
         if(letter === 'A' ){
             delete moves.uul;
@@ -62,7 +70,10 @@ const getAvailableMovesByPosition = (req,res) => {
             delete moves.uul;
         }
         
-        availableMoves = knightPiece.getKnightMoves(moves, req.query.position, chessHash);
+        availableMoves = knightPiece.getKnightMoves(moves, position, chessHash);
+    
+    }else{
+        return res.status(422).send({msg : "Please, given a valid chess piece. Ex.: Knight"})
     }
     
     let arrayOfMoves = [];
