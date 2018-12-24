@@ -150,7 +150,7 @@ describe('Knight Available Moves Unit Test', () => {
 
         });
 
-        it('shouUmoves from F3 to D4 (LEFT -> LEFT -> UP)', done => {
+        it('should moves from F3 to D4 (LEFT -> LEFT -> UP)', done => {
 
             const result = knight.LLU('F3', chessHash);
 
@@ -299,7 +299,7 @@ describe('Knight Available Moves Unit Test', () => {
 
         });
 
-        it('shouUmoves from F3 to D4 (LEFT -> LEFT -> UP)', done => {
+        it('should moves from F3 to D4 (LEFT -> LEFT -> UP)', done => {
 
             const result = knight.LLUFull('F3', chessHash);
 
