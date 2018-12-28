@@ -6,15 +6,7 @@ const chessHash = {
     rows : 8
 };
 
-const getAvailableMovesByPosition = (req,res) => {
-
-    let position = req.query.position ? req.query.position.toUpperCase() : req.query.position;
-
-    let piece = req.params.piece ? req.params.piece.toUpperCase() : req.params.piece;
-    
-    if(!(/^[a-h|A-H]([0-8]{1})$/).test(position)){
-        return res.status(422).send({msg : "Please, given a valid chess position. Ex.: A1, C8, H3..."})
-    }
+const calculateMoves = (piece, position) => {
 
     let availableMoves = [];
 
@@ -82,8 +74,54 @@ const getAvailableMovesByPosition = (req,res) => {
         arrayOfMoves.push(availableMoves[f])
     })
 
-    res.send(arrayOfMoves);
+    return arrayOfMoves;
+};
 
+
+const getAvailableMovesByPosition = (req,res) => {
+
+    let position = req.query.position ? req.query.position.toUpperCase() : req.query.position;
+
+    let piece = req.params.piece ? req.params.piece.toUpperCase() : req.params.piece;
+
+    let times = req.query.times ? req.query.times : 1;
+    
+    if(!(/^[a-h|A-H]([0-8]{1})$/).test(position)){
+        return res.status(422).send({msg : "Please, given a valid chess position. Ex.: A1, C8, H3..."})
+    }
+
+    let result = [];
+
+    let resultBkp = [];
+
+    result = calculateMoves(piece, position);
+
+    resultBkp = result;
+
+    for(let m=1;m<times;m++){
+
+        let tmpArr = [];
+
+        result.forEach(v => {
+
+            let tmpPos = getLastPosition(v);
+
+            resultBkp = resultBkp.concat(calculateMoves(piece, tmpPos));
+            tmpArr = tmpArr.concat(calculateMoves(piece, tmpPos));
+
+        });
+
+        result = tmpArr;
+    }
+
+    result = resultBkp;
+
+    res.send(result);
+
+};
+
+const getLastPosition = (arr) => {
+    return arr[arr.length-1];
 };
 
 module.exports = {
