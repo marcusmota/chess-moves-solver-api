@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test-unit": "clear && NODE_ENV=test mocha -w test/unit/**.js",
-    "test-integration": "clear && NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**.js --exit",
+    "test-unit": "NODE_ENV=test mocha test/unit/**.js --exit",
+    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**.js --exit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marcus Mota <marcushcsm@gmail.com>",
