@@ -337,6 +337,45 @@ const getKnightMoves = (moves, pos, chessHash) => {
     return availableMoves;
 };
 
+const getKnightMovesLastCell = (moves, pos, chessHash) => {
+
+    const availableMoves = {};
+
+    if(moves.uur){
+        availableMoves['uur'] = UUR(pos, chessHash);
+    }
+
+    if(moves.uul){
+        availableMoves['uul'] = UUL(pos, chessHash);
+    }
+
+    if(moves.ddr){
+        availableMoves['ddr'] = DDR(pos, chessHash);
+    }
+
+    if(moves.ddl){
+        availableMoves['ddl'] = DDL(pos, chessHash);
+    }
+
+    if(moves.llu){
+        availableMoves['llu'] = LLU(pos, chessHash);
+    }
+
+    if(moves.lld){
+        availableMoves['lld'] = LLD(pos, chessHash);
+    }
+
+    if(moves.rru){
+        availableMoves['rru'] = RRU(pos, chessHash);
+    }
+
+    if(moves.rrd){
+        availableMoves['rrd'] = RRD(pos, chessHash);
+    }
+    
+    return availableMoves;
+};
+
 module.exports = {
     UUR, UUL,
     DDR, DDL,
@@ -346,5 +385,6 @@ module.exports = {
     DDRFull, DDLFull,
     LLUFull, LLDFull,
     RRUFull, RRDFull,
-    getKnightMoves
+    getKnightMoves,
+    getKnightMovesLastCell
 }

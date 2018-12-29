@@ -308,6 +308,42 @@ describe('Knight Available Moves Unit Test', () => {
 
         });
 
+        it('should return the last available moves from D7 position', done => {
+            
+            const moves = { ddr: true, ddl: true, rru: true, rrd: true, llu: true, lld: true };
+            const position = 'D7';
+            const chessHash = {
+                columns : ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+                rows : 8
+            };
+            const result = knight.getKnightMovesLastCell(moves, position, chessHash);
+
+            const resultMock = { ddr: 'E5', ddl: 'C5', llu: 'B8', lld: 'B6', rru: 'F8', rrd: 'F6' };
+
+            expect(result).to.deep.equal(resultMock);
+            done();
+
+        });
+
+        it('should return the full path moves from C1 position', done => {
+            
+            const moves = { uur: true, uul: true, rru: true, llu: true };
+            const position = 'C1';
+            const chessHash = {
+                columns : ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+                rows : 8
+            };
+            const result = knight.getKnightMoves(moves, position, chessHash);
+
+            const resultMock = { uur: [ 'C2', 'C3', 'D3' ],
+            uul: [ 'C2', 'C3', 'B3' ],
+            llu: [ 'B1', 'A1', 'A2' ],
+            rru: [ 'D1', 'E1', 'E2' ] };
+
+            expect(result).to.deep.equal(resultMock);
+            done();
+
+        });
 
     });
 

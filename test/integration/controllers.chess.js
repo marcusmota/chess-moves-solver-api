@@ -7,7 +7,23 @@ const should = require('chai').should;
 describe('Chess Integration Test', () => {
 
     describe('GET /v1/get-moves-by-position/knight', () => {
-        it('should return 200 the 2 availables knight`s moves from A1', done => {
+
+        it('should return 200 with the 12 availables knight`s moves from A1 in 2 turns', done => {
+
+            let position = 'A1';
+
+            request
+            .get(`/v1/get-moves-by-position/knight?position=${position}&turns=2`)
+            .set('Accept', /application\/json/)
+            .end((err, result) => {
+
+                expect(result.body).to.have.lengthOf(12);
+                done();
+
+            });
+        });
+
+        it('should return 200 with the 2 availables knight`s moves from A1', done => {
 
             let position = 'A1';
 
@@ -24,7 +40,7 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 4 availables knight`s moves from C1', done => {
+        it('should return 200 with the 4 availables knight`s moves from C1', done => {
 
             let position = 'C1';
 
@@ -43,7 +59,7 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 4 availables knight`s moves from G7', done => {
+        it('should return 200 with the 4 availables knight`s moves from G7', done => {
 
             let position = 'G7';
 
@@ -62,7 +78,22 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 3 availables knight`s moves from B8', done => {
+        it('should return 200 with the 18 availables knight`s moves from G8 in 2 turns', done => {
+
+            let position = 'G8';
+
+            request
+            .get(`/v1/get-moves-by-position/knight?position=${position}&turns=2`)
+            .set('Accept', /application\/json/)
+            .end((err, result) => {
+
+                expect(result.body).to.have.lengthOf(18);
+                done();
+
+            });
+        });
+
+        it('should return 200 with the 3 availables knight`s moves from B8', done => {
 
             let position = 'B8';
 
@@ -80,7 +111,7 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 2 availables knight`s moves from H8', done => {
+        it('should return 200 with the 2 availables knight`s moves from H8', done => {
 
             let position = 'H8';
 
@@ -97,7 +128,7 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 8 availables knight`s moves from D4', done => {
+        it('should return 200 with the 8 availables knight`s moves from D4', done => {
 
             let position = 'D4';
 
@@ -120,7 +151,7 @@ describe('Chess Integration Test', () => {
             });
         });
 
-        it('should return 200 the 4 availables knight`s moves from B2', done => {
+        it('should return 200 with the 4 availables knight`s moves from B2', done => {
 
             let position = 'B2';
 
