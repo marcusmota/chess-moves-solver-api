@@ -38,6 +38,7 @@ index.js
 ```
 the application boostrap
 ```
+<<<<<<< HEAD
 
 src/app.js 
 ```
@@ -49,6 +50,19 @@ test
 folder with unit and integration tests
 ```
 
+=======
+
+src/app.js 
+```
+the application main file
+```
+
+test 
+```
+folder with unit and integration tests
+```
+
+>>>>>>> afb8bf88e4627e7d8476911da41a044e4b082f49
 src/controllers 
 ```
 Application controllers 
@@ -56,6 +70,7 @@ Application controllers
 
 src/controllers/chess.js - The chess controller has the following function
 ```
+<<<<<<< HEAD
 
 getAvailableMovesByPosition - it receive as req.query.position and req.query.turns (number of the turns that you want to 'skip') and as req.params.piece the name of the piece in this case 'KNIGHT' and return the possible moves from a given position
 
@@ -88,6 +103,7 @@ src/util
 it has helpers files
 ```
 
+<<<<<<< HEAD
 ## Routes Examples
 
 ```
@@ -102,6 +118,8 @@ http://localhost:6060/v1/could-move/KNIGHT?start=A1&end=C2   // will return true
 
 ```
 
+=======
+>>>>>>> afb8bf88e4627e7d8476911da41a044e4b082f49
 ## Contributing
 
 Feel free to join us on the API or in [Frontend App built in React](https://github.com/marcusmota/chess-moves-solver-app)
