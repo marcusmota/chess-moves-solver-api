@@ -49,6 +49,17 @@ test
 folder with unit and integration tests
 ```
 
+
+src/app.js 
+```
+the application main file
+```
+
+test 
+```
+folder with unit and integration tests
+```
+
 src/controllers 
 ```
 Application controllers 
@@ -56,6 +67,7 @@ Application controllers
 
 src/controllers/chess.js - The chess controller has the following function
 ```
+
 getAvailableMovesByPosition - it receive as req.query.position and req.query.turns (number of the turns that you want to 'skip') and as req.params.piece the name of the piece in this case 'KNIGHT' and return the possible moves from a given position
 
 getCouldMove - it receive as req.query.start (the start position) and req.query.end (the end position that you want to move) and as req.params.piece the name of the piece in this case 'KNIGHT' and return the possible moves from a given position
