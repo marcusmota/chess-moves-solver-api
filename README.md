@@ -38,25 +38,19 @@ The file `index.js` is the application boostrap
 
 The file `src/app.js` is the application main file
 
-the folder `test` is folder with unit and integration tests
-
-the file `src/app.js` is the application main file
-
+The folder `test` is folder with unit and integration tests
 
 The folder `src/controllers` is the application controllers 
 
-
 The file `src/controllers/chess.js` is the chess controller, it has the following functions
-```
 
+```
 getAvailableMovesByPosition - it receive as req.query.position and req.query.turns (number of the turns that you want to 'skip') and as req.params.piece the name of the piece in this case 'KNIGHT' and return the possible moves from a given position
 
 getCouldMove - it receive as req.query.start (the start position) and req.query.end (the end position that you want to move) and as req.params.piece the name of the piece in this case 'KNIGHT' and return the possible moves from a given position
 
 ```
-
 The folder `src/pieces` is where it contains the piece moves logic
-
 
 The file `src/pices/knight.js` explains
 
@@ -76,8 +70,6 @@ The others method is the moves implementation.
 The folder `src/routes` the API available routes
 
 The folder `src/util` has the helpers files
-
-
 
 
 ## Routes Examples
