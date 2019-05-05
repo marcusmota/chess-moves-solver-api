@@ -45,6 +45,7 @@ the file `src/app.js` is the application main file
 
 The folder `src/controllers` is the application controllers 
 
+
 The file `src/controllers/chess.js` is the chess controller, it has the following functions
 ```
 
@@ -60,6 +61,8 @@ The folder `src/pieces` is where it contains the piece moves logic
 The file `src/pices/knight.js` explains
 
 ```
+Knight File
+
 in this case using knight piece has the 8 moves called UUR (UP -> UP -> RIGHT), UUL (UP -> UP -> LEFT), LLU (LEFT -> LEFT -> UP), RRD (RIGHT -> RIGHT -> DOWN) and the others follow this logic. 
 
 Using the getKnightMovesLastCell with the moves {uur : true, rru : true} the return will be { uur : ['B3'], rru : ['C2'] } it's simulate the A1 moves
@@ -73,6 +76,9 @@ The others method is the moves implementation.
 The folder `src/routes` the API available routes
 
 The folder `src/util` has the helpers files
+
+
+
 
 ## Routes Examples
 
@@ -90,7 +96,7 @@ http://localhost:6060/v1/could-move/KNIGHT?start=A1&end=C2   // will return true
 
 ## Contributing
 
-Feel free to join us on the API
+Feel free to join us on the API or in [Frontend App built in React](https://github.com/marcusmota/chess-moves-solver-app)
 
 
 
